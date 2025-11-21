@@ -1,0 +1,38 @@
+.container{  /*Main Layout Wrapper*/
+    display: flex; /*turns the container into a flex box layout */
+    height: 100%;  /*makes the container fill it full*/
+    flex-direction: row; /*aligns child elements side by side horizontally*/
+}
+.split{/*Each half of the split UI*/
+    flex: 1; /*each .split takes up equal space*/
+    padding: 40px; /*adds spacing inside each half*/
+    display: flex; /*makes each .split a Flexbox container*/
+    flex-direction: column; /*stacks child elements vertically*/
+    justify-content: center;/*vertically centers content*/
+    align-items: center;/*Horizontally centers content*/
+}
+.split img{ /*Image Styling*/
+    width: 100%;/*Images stretches to fill its container's width*/
+    height: auto;/*keeps the aspect ratio intact*/
+    object-fit: cover;/*crops the image to fille the space without distortion*/
+}
+.button{/*Call to action styling*/
+    display: inline-block;/*allows padding and margin to work properly*/
+    padding: 10px 20px 10px 20px;/*adds space inside the button*/
+    background-color: darkblue;/*set the button color*/
+    color: white;/*makes the text white*/
+    border-radius: 5px;/*rounds the corner*/
+    margin-top: 5px;/*adds space above the button*/
+}
+@media(max-width: 768px){/*Mobile responsiveness*/
+    .container{
+        flex-direction:column;/*stacks .split sections vertically*/
+    }
+    .split{
+        padding: 20px;/*reduces padding for smaller screens*/
+    }
+    .split img{
+        width: 100%;/*ensures the image fills the mobile width*/
+        height: auto;/*maintains image proportions*/
+    }
+}
